@@ -44,7 +44,7 @@ public class UserDao {
             transaction = session.beginTransaction();
 
             User user = session.get(User.class, id);
-            session.update(user);
+            session.delete(user);
             transaction.commit();
         }catch (Exception e){
             if (transaction != null){
